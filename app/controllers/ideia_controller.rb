@@ -10,6 +10,8 @@ class IdeiaController < ApplicationController
   # GET /ideia/1
   # GET /ideia/1.json
   def show
+    @comments = @ideia.comments.all
+    @comment = @ideia.comments.build
   end
 
   # GET /ideia/new

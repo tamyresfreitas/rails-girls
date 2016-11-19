@@ -13,6 +13,17 @@
 <p>
   <strong>Foto:</strong>
   <%= image_tag(@ideium.picture_url, width: 600) if @ideium.picture.present? %>
+  <h3>Comentários</h3>
+  <% @comments.each do |comment| %>
+    <div>
+      <strong><%= comment.user_name %></strong>
+      <br />
+      <p><%= comment.body %></p>
+      <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Você tem certeza?' } %></p>
+    </div>
+  <% end %>
+  <%= render 'comments/form' %>
+
 </p>
 
 <%= link_to 'Editar', edit_ideium_path(@ideium) %> |
