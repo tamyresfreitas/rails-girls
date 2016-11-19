@@ -1,0 +1,32 @@
+<%= form_for(ideium) do |f| %>
+  <% if ideium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ideium.errors.count, "error") %> prohibited this ideium from being saved:</h2>
+
+      <ul>
+      <% ideium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'Nome'  %>
+    <%= f.text_field :name  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, 'Descrição'%>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture, 'Foto'  %>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

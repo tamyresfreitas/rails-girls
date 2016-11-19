@@ -1,0 +1,1 @@
+json.array! @ideia, partial: 'ideia/ideium', as: :ideium

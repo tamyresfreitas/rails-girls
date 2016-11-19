@@ -1,0 +1,1 @@
+json.partial! "ideia/ideium", ideium: @ideium

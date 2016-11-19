@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @ideium.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @ideium.description %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag(@ideium.picture_url, width: 600) if @ideium.picture.present? %>
+</p>
+
+<%= link_to 'Editar', edit_ideium_path(@ideium) %> |
+<%= link_to 'Voltar', ideia_path %>
